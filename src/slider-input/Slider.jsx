@@ -371,15 +371,33 @@ const Slider = ({
 
               {showCounter && (
                 <span 
-                  className="slider-counter-a01-11-0-8" 
+                  className="slider-counter-container"
                   style={{
-                    left: `${percentage}%`,
-                    transition: getCustomSliderTransitionStyle(isDragging, isAnimating),
-                    cursor: isDragging ? 'grabbing' : 'grab',
+                    position: 'absolute',
+                    width: '100%',
+                    height: '30px', // Явно задаем высоту для лучшего захвата кликов
+                    top: '-15px', // Поднимаем выше, чтобы покрыть область над осью
+                    left: 0,
+                    zIndex: 1,
+                    pointerEvents: 'auto', // Разрешаем события клика
+                    cursor: 'pointer', // Добавляем указатель для визуальной подсказки
                   }}
-                  onMouseDown={handleDragStart}
+                  onMouseDown={handleAxisClick}
                 >
-                  {value}
+                  <span 
+                    className="slider-counter-a01-11-0-8" 
+                    style={{
+                      left: `${percentage}%`,
+                      transition: getCustomSliderTransitionStyle(isDragging, isAnimating),
+                      cursor: isDragging ? 'grabbing' : 'grab',
+                      position: 'absolute',
+                      zIndex: 2,
+                      pointerEvents: 'auto', // Разрешаем события на counter
+                    }}
+                    onMouseDown={handleDragStart}
+                  >
+                    {value}
+                  </span>
                 </span>
               )}
 
@@ -452,15 +470,33 @@ const Slider = ({
 
             {showCounter && (
               <span 
-                className="slider-counter-a01-11-0-8" 
+                className="slider-counter-container"
                 style={{
-                  left: `${percentage}%`,
-                  transition: getCustomSliderTransitionStyle(isDragging, isAnimating),
-                  cursor: isDragging ? 'grabbing' : 'grab',
+                  position: 'absolute',
+                  width: '100%',
+                  height: '30px', // Явно задаем высоту для лучшего захвата кликов
+                  top: '-15px', // Поднимаем выше, чтобы покрыть область над осью
+                  left: 0,
+                  zIndex: 1,
+                  pointerEvents: 'auto', // Разрешаем события клика
+                  cursor: 'pointer', // Добавляем указатель для визуальной подсказки
                 }}
-                onMouseDown={handleDragStart}
+                onMouseDown={handleAxisClick}
               >
-                {value}
+                <span 
+                  className="slider-counter-a01-11-0-8" 
+                  style={{
+                    left: `${percentage}%`,
+                    transition: getCustomSliderTransitionStyle(isDragging, isAnimating),
+                    cursor: isDragging ? 'grabbing' : 'grab',
+                    position: 'absolute',
+                    zIndex: 2,
+                    pointerEvents: 'auto', // Разрешаем события на counter
+                  }}
+                  onMouseDown={handleDragStart}
+                >
+                  {value}
+                </span>
               </span>
             )}
 
