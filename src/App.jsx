@@ -254,7 +254,7 @@ function App() {
   return (
     <>
       <ErrorBoundary>
-        <Slider customTokens={tokenValues} withInput={false} active={true} />
+        <Slider customTokens={tokenValues} defaultValue={55} withInput={false} active={true} showCounter={true}/>
       </ErrorBoundary>
       
       <div className="tokens-configurator">

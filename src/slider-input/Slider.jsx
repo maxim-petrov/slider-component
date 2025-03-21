@@ -22,6 +22,7 @@ const Slider = ({
   steps = [0, 25, 50, 75, 100],
   withInput = true,
   active = false,
+  showCounter = true,
   customTokens = null,
   onChange,
 }) => {
@@ -347,7 +348,7 @@ const Slider = ({
           <span
             className={`slider-root-80f-11-0-8 slider-inputSliderMode-be3-11-0-8 ${
               isDragging ? 'slider-dragging' : ''
-            }`}
+            } ${showCounter ? 'slider-withCounter-21e-11-0-8' : ''}`}
             data-e2e-id="slider-slider"
           >
             <span
@@ -367,6 +368,19 @@ const Slider = ({
                   }}
                 />
               </span>
+
+              {showCounter && (
+                <span 
+                  className="slider-counter-a01-11-0-8" 
+                  style={{
+                    left: `${percentage}%`,
+                    transition: getCustomSliderTransitionStyle(isDragging, isAnimating),
+                    pointerEvents: 'none'
+                  }}
+                >
+                  {value}
+                </span>
+              )}
 
               <span
                 className={`slider-thumb-2b5-11-0-8 ${
@@ -416,7 +430,7 @@ const Slider = ({
         <span
           className={`slider-root-80f-11-0-8 ${
             active ? 'slider-active-c30-11-0-8' : ''
-          } ${isDragging ? 'slider-dragging' : ''}`}
+          } ${isDragging ? 'slider-dragging' : ''} ${showCounter ? 'slider-withCounter-21e-11-0-8' : ''}`}
           data-e2e-id="slider"
           tabIndex="0"
         >
@@ -434,6 +448,19 @@ const Slider = ({
                 }}
               />
             </span>
+
+            {showCounter && (
+              <span 
+                className="slider-counter-a01-11-0-8" 
+                style={{
+                  left: `${percentage}%`,
+                  transition: getCustomSliderTransitionStyle(isDragging, isAnimating),
+                  pointerEvents: 'none'
+                }}
+              >
+                {value}
+              </span>
+            )}
 
             <span
               className={`slider-thumb-2b5-11-0-8 ${
