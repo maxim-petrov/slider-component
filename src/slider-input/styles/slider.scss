@@ -162,6 +162,7 @@
   margin: 5px 0;
   position: relative;
   width: 100%;
+  cursor: ew-resize;
 }
 
 .slider-axis-923-11-0-8:before {
@@ -214,6 +215,7 @@
   top: -9px;
   transform: translateX(-50%);
   width: 30px;
+  z-index: 999;
 }
 
 .slider-thumb-2b5-11-0-8 .slider-thumbInner-c38-11-0-8 {
@@ -274,6 +276,7 @@
   margin-top: 1px;
   padding-right: 2px;
   width: 100%;
+  cursor: ew-resize;
 }
 
 .slider-valueHints-c0e-11-0-8 .slider-valueHint-1ed-11-0-8 {

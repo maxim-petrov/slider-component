@@ -380,7 +380,7 @@ const Slider = ({
                     left: 0,
                     zIndex: 1,
                     pointerEvents: 'auto', // Разрешаем события клика
-                    cursor: 'pointer', // Добавляем указатель для визуальной подсказки
+                    cursor: 'ew-resize', // Меняем на ew-resize
                   }}
                   onMouseDown={handleAxisClick}
                 >
@@ -423,14 +423,14 @@ const Slider = ({
             <span
               className="slider-valueHints-c0e-11-0-8"
               onMouseDown={handleHintsContainerClick}
-              style={{ cursor: 'pointer' }}
+              style={{ cursor: 'ew-resize' }}
             >
               {steps.map((step, index) => (
                 <span
                   key={index}
                   className="slider-valueHint-1ed-11-0-8"
                   onMouseDown={handleStepClick(step)}
-                  style={{ cursor: 'pointer' }}
+                  style={{ cursor: 'ew-resize' }}
                 >
                   <span className="slider-hintText-eb7-11-0-8">{step}</span>
                 </span>
@@ -479,7 +479,7 @@ const Slider = ({
                   left: 0,
                   zIndex: 1,
                   pointerEvents: 'auto', // Разрешаем события клика
-                  cursor: 'pointer', // Добавляем указатель для визуальной подсказки
+                  cursor: 'ew-resize', // Меняем на ew-resize
                 }}
                 onMouseDown={handleAxisClick}
               >
@@ -522,14 +522,14 @@ const Slider = ({
           <span
             className="slider-valueHints-c0e-11-0-8"
             onMouseDown={handleHintsContainerClick}
-            style={{ cursor: 'pointer' }}
+            style={{ cursor: 'ew-resize' }}
           >
             {steps.map((step, index) => (
               <span
                 key={index}
                 className="slider-valueHint-1ed-11-0-8"
                 onMouseDown={handleStepClick(step)}
-                style={{ cursor: 'pointer' }}
+                style={{ cursor: 'ew-resize' }}
               >
                 <span className="slider-hintText-eb7-11-0-8">{step}</span>
               </span>
