@@ -1,0 +1,344 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.animation-selector {
+  margin: 20px 0;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.animation-selector label {
+  font-weight: 500;
+}
+
+.animation-selector select {
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.animation-selector select:hover {
+  border-color: #aaa;
+}
+
+.animation-selector select:focus {
+  outline: none;
+  border-color: #666;
+  box-shadow: 0 0 0 2px rgba(0,0,0,0.1);
+}
+
+.tokens-configurator {
+  padding: 20px;
+  margin-top: 30px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  max-width: 900px;
+  margin: 30px auto;
+}
+
+.tokens-configurator h3 {
+  margin-top: 0;
+  color: #333;
+  font-size: 1.5rem;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.tokens-configurator h4 {
+  margin-top: 20px;
+  margin-bottom: 12px;
+  color: #555;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 6px;
+}
+
+.tokens-section {
+  margin-bottom: 30px;
+}
+
+.tokens-section h4 {
+  color: #555;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.tokens-section h5 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.token-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.token-group:hover {
+  background-color: #fff;
+}
+
+.token-group label {
+  width: 250px;
+  font-size: 0.9rem;
+  color: #444;
+  margin-right: 0.5rem;
+  text-align: left;
+}
+
+.token-group select,
+.token-group input {
+  padding: 0.3rem 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.token-group select {
+  width: 250px;
+  margin-right: 0.5rem;
+}
+
+.token-custom-value {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.token-preview {
+  margin: 30px auto;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  text-align: center;
+  max-width: 90%;
+}
+
+.token-preview h4 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.token-preview p {
+  margin-top: 15px;
+  color: #666;
+}
+
+.preview-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.preview-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 150px;
+}
+
+.preview-box {
+  width: 80px;
+  height: 80px;
+  background: #3498db;
+  border-radius: 8px;
+  transform-origin: center;
+  margin-bottom: 10px;
+}
+
+.preview-box:hover {
+  transform: scale(1.2) rotate(10deg);
+}
+
+.preview-label {
+  font-size: 12px;
+  color: #666;
+  font-family: monospace;
+  text-align: center;
+}
+
+.token-values {
+  margin-top: 30px;
+  padding: 15px;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  text-align: left;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.token-value-item {
+  margin-bottom: 4px;
+}
+
+.token-values code {
+  font-family: monospace;
+  background-color: #e3e3e3;
+  padding: 2px 4px;
+  border-radius: 3px;
+  display: inline-block;
+  margin: 2px 0;
+}
+
+/* Spring token specific styles */
+.spring-token-group {
+  margin-bottom: 20px;
+}
+
+.spring-token-group input[type="number"] {
+  width: 200px;
+}
+
+.spring-token-group h5 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #666;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .token-group {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .token-group label {
+    margin-bottom: 0.5rem;
+  }
+  
+  .token-group select,
+  .token-custom-value {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  
+  .preview-boxes {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Добавляем стили для новых описаний токенов */
+
+.token-description {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.token-description label {
+  font-weight: 400;
+  color: #333;
+  font-size: 0.9rem;
+  flex: 1;
+}
+
+.token-technical-name {
+  color: #888;
+  font-size: 0.75rem;
+  padding: 2px 5px;
+  background-color: #f0f0f0;
+  border-radius: 3px;
+  font-family: monospace;
+}
+
+.token-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.token-controls select {
+  flex: 1.5;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fff;
+  font-size: 0.9rem;
+}
+
+/* Добавляем группировку по компонентам */
+
+.component-group {
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #fafafa;
+  border-radius: 6px;
+}
+
+.component-group h5 {
+  color: #444;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #eee;
+}
+
+/* Удаляем цветные полоски слева */
+.component-group-THUMB, 
+.component-group-AXIS, 
+.component-group-COUNTER, 
+.component-group-SLIDER {
+  border-left: none;
+}

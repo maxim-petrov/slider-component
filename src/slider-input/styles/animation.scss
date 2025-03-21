@@ -1,0 +1,45 @@
+/* Import tokens */
+@import '../tokens/utils/tokenUtils';
+
+/* Переход оси */
+.slider-axis-923-11-0-8:before {
+  transition: background-color $AXIS_TRANSITION_DURATION $AXIS_TRANSITION_EASING;
+}
+
+/* Переход заполнения оси */
+.slider-axisFill-f1d-11-0-8 {
+  transition: $AXIS_FILL_TRANSITION_DURATION;
+}
+
+/* Переход счетчика */
+.slider-counter-a01-11-0-8 {
+  transition: right $COUNTER_TRANSITION_DURATION;
+}
+
+/* Переход внутренней части ползунка */
+.slider-thumb-2b5-11-0-8 .slider-thumbInner-c38-11-0-8 {
+  transition: box-shadow $THUMB_TRANSITION_DURATION $THUMB_TRANSITION_EASING;
+}
+
+/* Переход точки внутренней части ползунка */
+.slider-thumb-2b5-11-0-8 .slider-thumbInner-c38-11-0-8 .slider-thumbInnerDot {
+  transition: 
+    height $THUMB_DOT_EXPAND_DURATION $THUMB_DOT_TRANSITION_EASING,
+    width $THUMB_DOT_EXPAND_DURATION $THUMB_DOT_TRANSITION_EASING;
+}
+
+/* Переходы при перетаскивании ползунка */
+.slider-thumb-2b5-11-0-8.slider-dragging .slider-thumbInner-c38-11-0-8 {
+  transition-duration: $THUMB_DRAG_DURATION;
+  transition-timing-function: $THUMB_DRAG_EASING;
+}
+
+.slider-dragging .slider-thumb-2b5-11-0-8 .slider-thumbInner-c38-11-0-8 {
+  transition-duration: $THUMB_DRAG_DURATION;
+  transition-timing-function: $THUMB_DRAG_EASING;
+}
+
+/* Отключить переход в активном состоянии */
+.slider-root-80f-11-0-8.slider-active-c30-11-0-8 .slider-axisFill-f1d-11-0-8 {
+  transition: $AXIS_FILL_ACTIVE_DURATION;
+} 

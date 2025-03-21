@@ -1,0 +1,38 @@
+// Определяем CSS переменные для токенов
+:root {
+  --axis-fill-active-duration: 0;
+  --axis-fill-transition-duration: 200ms;
+  --axis-transition-duration: 200ms;
+  --axis-transition-easing: cubic-bezier(0, 0, 1, 1);
+  --counter-transition-duration: 100ms;
+  --counter-transition-easing: cubic-bezier(0, 0, 1, 1);
+  --slider-animation-duration: 500ms;
+  --slider-transition-duration: 300ms;
+  --slider-transition-easing: cubic-bezier(.165, .84, .44, 1);
+  --thumb-dot-collapse-duration: 300ms;
+  --thumb-dot-expand-duration: 300ms;
+  --thumb-dot-transition-easing: cubic-bezier(.165, .84, .44, 1);
+  --thumb-drag-duration: 200ms;
+  --thumb-drag-easing: cubic-bezier(.165, .84, .44, 1);
+  --thumb-hover-duration: 300ms;
+  --thumb-transition-duration: 300ms;
+  --thumb-transition-easing: cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+// SCSS переменные для удобного использования
+$AXIS_FILL_ACTIVE_DURATION: var(--axis-fill-active-duration);
+$AXIS_FILL_TRANSITION_DURATION: var(--axis-fill-transition-duration);
+$AXIS_TRANSITION_DURATION: var(--axis-transition-duration);
+$AXIS_TRANSITION_EASING: var(--axis-transition-easing);
+$COUNTER_TRANSITION_DURATION: var(--counter-transition-duration);
+$COUNTER_TRANSITION_EASING: var(--counter-transition-easing);
+$SLIDER_ANIMATION_DURATION: var(--slider-animation-duration);
+$SLIDER_TRANSITION_DURATION: var(--slider-transition-duration);
+$SLIDER_TRANSITION_EASING: var(--slider-transition-easing);
+$THUMB_DOT_COLLAPSE_DURATION: var(--thumb-dot-collapse-duration);
+$THUMB_DOT_EXPAND_DURATION: var(--thumb-dot-expand-duration);
+$THUMB_DOT_TRANSITION_EASING: var(--thumb-dot-transition-easing);
+$THUMB_DRAG_DURATION: var(--thumb-drag-duration);
+$THUMB_DRAG_EASING: var(--thumb-drag-easing);
+$THUMB_HOVER_DURATION: var(--thumb-hover-duration);
+$THUMB_TRANSITION_DURATION: var(--thumb-transition-duration);
+$THUMB_TRANSITION_EASING: var(--thumb-transition-easing);
