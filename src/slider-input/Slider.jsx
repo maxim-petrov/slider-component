@@ -375,8 +375,9 @@ const Slider = ({
                   style={{
                     left: `${percentage}%`,
                     transition: getCustomSliderTransitionStyle(isDragging, isAnimating),
-                    pointerEvents: 'none'
+                    cursor: isDragging ? 'grabbing' : 'grab',
                   }}
+                  onMouseDown={handleDragStart}
                 >
                   {value}
                 </span>
@@ -455,8 +456,9 @@ const Slider = ({
                 style={{
                   left: `${percentage}%`,
                   transition: getCustomSliderTransitionStyle(isDragging, isAnimating),
-                  pointerEvents: 'none'
+                  cursor: isDragging ? 'grabbing' : 'grab',
                 }}
+                onMouseDown={handleDragStart}
               >
                 {value}
               </span>
