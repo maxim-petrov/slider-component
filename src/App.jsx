@@ -262,7 +262,7 @@ function App() {
         
         <div className="tokens-section">          
           {Object.entries(animationByComponent)
-            .filter(([componentName]) => componentName !== 'COUNTER')
+            .filter(([componentName]) => componentName !== 'COUNTER' && componentName !== 'AXIS' && componentName !== 'THUMB')
             .map(([componentName, tokens]) => (
             <div key={componentName} className={`component-group component-group-${componentName}`}>
               {tokens.map(([tokenName, tokenValue]) => {

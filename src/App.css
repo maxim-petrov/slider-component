@@ -365,3 +365,7 @@
   background-color: #f0f5f8; 
   border-radius: 20px;
 }
+
+.tokens-configurator h3 {
+  margin-bottom: 20px;
+}
