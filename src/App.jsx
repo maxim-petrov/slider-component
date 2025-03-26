@@ -260,9 +260,7 @@ function App() {
       <div className="tokens-configurator">
         <h3>Настройка токенов анимации</h3>
         
-        <div className="tokens-section">
-          <h4>Токены анимации</h4>
-          
+        <div className="tokens-section">          
           {Object.entries(animationByComponent).map(([componentName, tokens]) => (
             <div key={componentName} className={`component-group component-group-${componentName}`}>
               {tokens.map(([tokenName, tokenValue]) => {
@@ -277,7 +275,6 @@ function App() {
                   <div className="token-group" key={tokenName}>
                     <div className="token-description">
                       <label htmlFor={`token-${tokenName}`}>{description}</label>
-                      <span className="token-technical-name">{tokenName}</span>
                     </div>
                     <div className="token-controls">
                       <select 
@@ -331,7 +328,6 @@ function App() {
                     <div className="token-group" key={tokenName}>
                       <div className="token-description">
                         <label htmlFor={`token-${tokenName}`}>{description}</label>
-                        <span className="token-technical-name">{tokenName}</span>
                       </div>
                       <input
                         type="number"
@@ -359,7 +355,6 @@ function App() {
                     <div className="token-group" key={tokenName}>
                       <div className="token-description">
                         <label htmlFor={`token-${tokenName}`}>{description}</label>
-                        <span className="token-technical-name">{tokenName}</span>
                       </div>
                       <input
                         type="number"
@@ -387,7 +382,6 @@ function App() {
                     <div className="token-group" key={tokenName}>
                       <div className="token-description">
                         <label htmlFor={`token-${tokenName}`}>{description}</label>
-                        <span className="token-technical-name">{tokenName}</span>
                       </div>
                       <input
                         type="number"
