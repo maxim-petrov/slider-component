@@ -1,3 +1,5 @@
+@import './animation.scss';
+
 .slider-counter-a01-11-0-8 {
   -webkit-touch-callout: none;
   font: 500 14px/18px SBSans, sans-serif;
@@ -258,8 +260,8 @@
 .slider-thumb-2b5-11-0-8.slider-dragging .slider-thumbInner-c38-11-0-8,
 .slider-dragging .slider-thumb-2b5-11-0-8 .slider-thumbInner-c38-11-0-8 {
   transform: scale(1.25);
-  transition-duration: 0.25s;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: $THUMB_DRAG_DURATION;
+  transition-timing-function: $THUMB_DRAG_EASING;
 }
 
 .slider-valueHints-c0e-11-0-8 {
@@ -369,6 +371,8 @@
       var(--color_component_slider_track_active, #009e36),
       #0000 85%
     );
+  transition-duration: $THUMB_DRAG_DURATION;
+  transition-timing-function: $THUMB_DRAG_EASING;
 }
 
 .slider-dragging .slider-thumb-2b5-11-0-8 .slider-thumbInner-c38-11-0-8 {
@@ -378,6 +382,8 @@
       var(--color_component_slider_track_active, #009e36),
       #0000 85%
     );
+  transition-duration: $THUMB_DRAG_DURATION;
+  transition-timing-function: $THUMB_DRAG_EASING;
 }
 
 /* Стиль для оси слайдера при перетаскивании */
