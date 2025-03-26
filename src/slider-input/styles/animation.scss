@@ -44,8 +44,8 @@ $COUNTER_RISE_AMOUNT: 5px;
   will-change: top, left;
 }
 
-/* Стиль счетчика при активном перетаскивании - анимируем подъем */
-.slider-active-dragging .slider-counter-a01-11-0-8 {
+/* Стиль счетчика при перетаскивании - анимируем подъем */
+.slider-dragging .slider-counter-a01-11-0-8 {
   animation: counterRise $COUNTER_ANIMATION_DURATION $THUMB_DRAG_EASING forwards;
 }
 
