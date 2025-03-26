@@ -69,7 +69,7 @@
 }
 
 .slider-root-80f-11-0-8:focus.focus-visible {
-  cursor: ew-resize;
+  cursor: pointer;
 }
 
 .slider-root-80f-11-0-8:focus.focus-visible .slider-axis-923-11-0-8:before {
@@ -80,7 +80,7 @@
   (hover: hover),
   all and (-ms-high-contrast: none) {
   .slider-root-80f-11-0-8:hover {
-    cursor: ew-resize;
+    cursor: pointer;
   }
 
   .slider-root-80f-11-0-8:hover .slider-axis-923-11-0-8:before {
@@ -89,7 +89,7 @@
 }
 
 .slider-root-80f-11-0-8.slider-active-c30-11-0-8 {
-  cursor: ew-resize;
+  cursor: pointer;
 }
 
 .slider-root-80f-11-0-8.slider-active-c30-11-0-8
@@ -164,7 +164,7 @@
   margin: 5px 0;
   position: relative;
   width: 100%;
-  cursor: ew-resize;
+  cursor: pointer;
 }
 
 .slider-axis-923-11-0-8:before {
@@ -272,7 +272,7 @@
   margin-top: 1px;
   padding-right: 2px;
   width: 100%;
-  cursor: ew-resize;
+  cursor: pointer;
 }
 
 .slider-valueHints-c0e-11-0-8 .slider-valueHint-1ed-11-0-8 {

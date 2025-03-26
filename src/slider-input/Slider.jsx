@@ -394,7 +394,7 @@ const Slider = ({
                     left: 0,
                     zIndex: 1,
                     pointerEvents: 'auto', // Разрешаем события клика
-                    cursor: 'ew-resize', // Меняем на ew-resize
+                    cursor: 'pointer', // Меняем на pointer
                   }}
                   onMouseDown={handleAxisClick}
                 >
@@ -437,14 +437,14 @@ const Slider = ({
             <span
               className="slider-valueHints-c0e-11-0-8"
               onMouseDown={handleHintsContainerClick}
-              style={{ cursor: 'ew-resize' }}
+              style={{ cursor: 'pointer' }}
             >
               {steps.map((step, index) => (
                 <span
                   key={index}
                   className="slider-valueHint-1ed-11-0-8"
                   onMouseDown={handleStepClick(step)}
-                  style={{ cursor: 'ew-resize' }}
+                  style={{ cursor: 'pointer' }}
                 >
                   <span className="slider-hintText-eb7-11-0-8">{step}</span>
                 </span>
@@ -493,7 +493,7 @@ const Slider = ({
                   left: 0,
                   zIndex: 1,
                   pointerEvents: 'auto', // Разрешаем события клика
-                  cursor: 'ew-resize', // Меняем на ew-resize
+                  cursor: 'pointer', // Меняем на pointer
                 }}
                 onMouseDown={handleAxisClick}
               >
@@ -536,14 +536,14 @@ const Slider = ({
           <span
             className="slider-valueHints-c0e-11-0-8"
             onMouseDown={handleHintsContainerClick}
-            style={{ cursor: 'ew-resize' }}
+            style={{ cursor: 'pointer' }}
           >
             {steps.map((step, index) => (
               <span
                 key={index}
                 className="slider-valueHint-1ed-11-0-8"
                 onMouseDown={handleStepClick(step)}
-                style={{ cursor: 'ew-resize' }}
+                style={{ cursor: 'pointer' }}
               >
                 <span className="slider-hintText-eb7-11-0-8">{step}</span>
               </span>
