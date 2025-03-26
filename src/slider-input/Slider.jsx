@@ -28,6 +28,7 @@ const Slider = ({
 }) => {
   const [value, setValue] = useState(defaultValue);
   const [isDragging, setIsDragging] = useState(false);
+  const [isActiveDragging, setIsActiveDragging] = useState(false);
   const [isDraggingEnd, setIsDraggingEnd] = useState(false);
   const [isAnimating, startAnimation, stopAnimation] = useSliderAnimation(
     customTokens?.SLIDER_ANIMATION_DURATION || null,
@@ -136,6 +137,11 @@ const Slider = ({
   const handleMouseMove = (e) => {
     if (!isDragging || !sliderRef.current) return;
 
+    // Если началось перемещение мыши, это считается активным перетаскиванием
+    if (!isActiveDragging) {
+      setIsActiveDragging(true);
+    }
+
     const sliderRect = sliderRef.current.getBoundingClientRect();
     const sliderWidth = sliderRect.width;
     const offset = Math.min(
@@ -159,11 +165,12 @@ const Slider = ({
     e.preventDefault();
   };
 
-  // Обработчик начала перетаскивания
+  // Обработчик начала перетаскивания thumb или counter
   const handleDragStart = (e) => {
     console.log('Drag start');
     setIsDraggingEnd(false);
     setIsDragging(true);
+    setIsActiveDragging(true); // Устанавливаем флаг активного перетаскивания
     // При перетаскивании анимация отключена для горизонтального движения
     stopAnimation();
 
@@ -177,8 +184,13 @@ const Slider = ({
   const handleDragEnd = () => {
     console.log('Drag end');
     
-    // Устанавливаем флаг окончания перетаскивания для запуска анимации возврата
-    setIsDraggingEnd(true);
+    // Активируем анимацию возврата только если было активное перетаскивание
+    if (isActiveDragging) {
+      setIsDraggingEnd(true);
+    }
+    
+    // Сбрасываем флаг активного перетаскивания
+    setIsActiveDragging(false);
     
     // Включаем анимацию для горизонтального движения
     startAnimation();
@@ -223,7 +235,8 @@ const Slider = ({
 
     setValue(newValue);
 
-    // Устанавливаем состояние нажатия при mouse down
+    // Устанавливаем состояние нажатия при mouse down, 
+    // но НЕ устанавливаем флаг активного перетаскивания
     setIsDragging(true);
 
     // Включаем анимацию при клике на линию
@@ -249,7 +262,8 @@ const Slider = ({
     // Устанавливаем значение равным значению шага
     setValue(stepValue);
 
-    // Устанавливаем состояние нажатия при mouse down
+    // Устанавливаем состояние нажатия при mouse down,
+    // но НЕ устанавливаем флаг активного перетаскивания
     setIsDragging(true);
 
     // Включаем анимацию при клике на значение
@@ -294,7 +308,8 @@ const Slider = ({
 
     setValue(newValue);
 
-    // Устанавливаем состояние нажатия при mouse down
+    // Устанавливаем состояние нажатия при mouse down,
+    // но НЕ устанавливаем флаг активного перетаскивания
     setIsDragging(true);
 
     // Включаем анимацию при клике на область между цифрами
@@ -333,7 +348,7 @@ const Slider = ({
             style={getInputDraggingStyle(isDragging)}
           >
             <div
-              className={`inpt-root-670-12-3-0 inpt-large-258-12-3-0 inpt-primary-8dd-12-3-0 inpt-notEmpty-432-12-3-0 inpt-fluid-199-12-3-0 inpt-hasLabel-14b-12-3-0 nmbr-inp-root-220-11-1-0 ${
+              className={`inpt-root-670-12-3-0 inpt-large-258-12-3-0 inpt-primary-8dd-12-3-0 inpt-notEmpty-432-12-3-0 inpt-fluid-199-12-3-0 inpt-hasLabel-14b-12-3-0 ${
                 isFocused ? 'inpt-focused-b65-12-3-0' : ''
               }`}
               data-e2e-id="slider-input"
@@ -362,7 +377,7 @@ const Slider = ({
           <span
             className={`slider-root-80f-11-0-8 slider-inputSliderMode-be3-11-0-8 ${
               isDragging ? 'slider-dragging' : ''
-            } ${isDraggingEnd ? 'slider-dragging-end' : ''} ${showCounter ? 'slider-withCounter-21e-11-0-8' : ''}`}
+            } ${isActiveDragging ? 'slider-active-dragging' : ''} ${isDraggingEnd ? 'slider-dragging-end' : ''} ${showCounter ? 'slider-withCounter-21e-11-0-8' : ''}`}
             data-e2e-id="slider-slider"
           >
             <span
@@ -463,7 +478,7 @@ const Slider = ({
         <span
           className={`slider-root-80f-11-0-8 ${
             active ? 'slider-active-c30-11-0-8' : ''
-          } ${isDragging ? 'slider-dragging' : ''} ${isDraggingEnd ? 'slider-dragging-end' : ''} ${showCounter ? 'slider-withCounter-21e-11-0-8' : ''}`}
+          } ${isDragging ? 'slider-dragging' : ''} ${isActiveDragging ? 'slider-active-dragging' : ''} ${isDraggingEnd ? 'slider-dragging-end' : ''} ${showCounter ? 'slider-withCounter-21e-11-0-8' : ''}`}
           data-e2e-id="slider"
           tabIndex="0"
         >
