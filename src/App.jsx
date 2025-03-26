@@ -261,7 +261,9 @@ function App() {
         <h3>Настройка токенов анимации</h3>
         
         <div className="tokens-section">          
-          {Object.entries(animationByComponent).map(([componentName, tokens]) => (
+          {Object.entries(animationByComponent)
+            .filter(([componentName]) => componentName !== 'COUNTER')
+            .map(([componentName, tokens]) => (
             <div key={componentName} className={`component-group component-group-${componentName}`}>
               {tokens.map(([tokenName, tokenValue]) => {
                 const description = getTokenDescription(tokenName);
