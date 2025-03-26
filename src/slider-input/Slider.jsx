@@ -28,6 +28,7 @@ const Slider = ({
 }) => {
   const [value, setValue] = useState(defaultValue);
   const [isDragging, setIsDragging] = useState(false);
+  const [isDraggingEnd, setIsDraggingEnd] = useState(false);
   const [isAnimating, startAnimation, stopAnimation] = useSliderAnimation(
     customTokens?.SLIDER_ANIMATION_DURATION || null,
     customTokens?.SLIDER_TRANSITION_DURATION || tokens.SLIDER_TRANSITION_DURATION
@@ -161,8 +162,9 @@ const Slider = ({
   // Обработчик начала перетаскивания
   const handleDragStart = (e) => {
     console.log('Drag start');
+    setIsDraggingEnd(false);
     setIsDragging(true);
-    // При перетаскивании анимация отключена
+    // При перетаскивании анимация отключена для горизонтального движения
     stopAnimation();
 
     // Предотвращаем выделение текста и всплытие события
@@ -174,8 +176,20 @@ const Slider = ({
   // Обработчик окончания перетаскивания
   const handleDragEnd = () => {
     console.log('Drag end');
-    setIsDragging(false);
-    document.body.style.userSelect = '';
+    
+    // Устанавливаем флаг окончания перетаскивания для запуска анимации возврата
+    setIsDraggingEnd(true);
+    
+    // Включаем анимацию для горизонтального движения
+    startAnimation();
+    
+    // Небольшая задержка перед сбросом isDragging, чтобы анимация успела запуститься
+    setTimeout(() => {
+      setIsDragging(false);
+      // Сбрасываем флаг окончания перетаскивания после завершения анимации
+      setTimeout(() => setIsDraggingEnd(false), 300);
+      document.body.style.userSelect = '';
+    }, 10);
   };
 
   // Добавляем и удаляем обработчики событий на уровне документа
@@ -348,7 +362,7 @@ const Slider = ({
           <span
             className={`slider-root-80f-11-0-8 slider-inputSliderMode-be3-11-0-8 ${
               isDragging ? 'slider-dragging' : ''
-            } ${showCounter ? 'slider-withCounter-21e-11-0-8' : ''}`}
+            } ${isDraggingEnd ? 'slider-dragging-end' : ''} ${showCounter ? 'slider-withCounter-21e-11-0-8' : ''}`}
             data-e2e-id="slider-slider"
           >
             <span
@@ -385,7 +399,7 @@ const Slider = ({
                   onMouseDown={handleAxisClick}
                 >
                   <span 
-                    className="slider-counter-a01-11-0-8" 
+                    className={`slider-counter-a01-11-0-8 ${isDraggingEnd ? 'slider-dragging-end' : ''}`}
                     style={{
                       left: `${percentage}%`,
                       transition: getCustomSliderTransitionStyle(isDragging, isAnimating),
@@ -449,7 +463,7 @@ const Slider = ({
         <span
           className={`slider-root-80f-11-0-8 ${
             active ? 'slider-active-c30-11-0-8' : ''
-          } ${isDragging ? 'slider-dragging' : ''} ${showCounter ? 'slider-withCounter-21e-11-0-8' : ''}`}
+          } ${isDragging ? 'slider-dragging' : ''} ${isDraggingEnd ? 'slider-dragging-end' : ''} ${showCounter ? 'slider-withCounter-21e-11-0-8' : ''}`}
           data-e2e-id="slider"
           tabIndex="0"
         >
@@ -484,7 +498,7 @@ const Slider = ({
                 onMouseDown={handleAxisClick}
               >
                 <span 
-                  className="slider-counter-a01-11-0-8" 
+                  className={`slider-counter-a01-11-0-8 ${isDraggingEnd ? 'slider-dragging-end' : ''}`}
                   style={{
                     left: `${percentage}%`,
                     transition: getCustomSliderTransitionStyle(isDragging, isAnimating),

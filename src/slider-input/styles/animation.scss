@@ -13,6 +13,20 @@ $THUMB_DOT_TRANSITION_EASING: ease-out;
 $THUMB_DRAG_DURATION: 0.25s;
 $THUMB_DRAG_EASING: cubic-bezier(0.4, 0, 0.2, 1);
 $AXIS_FILL_ACTIVE_DURATION: 0.1s;
+$COUNTER_ANIMATION_DURATION: 0.25s;
+$COUNTER_RISE_AMOUNT: 5px;
+
+/* Анимация подъема счетчика */
+@keyframes counterRise {
+  0% { top: 6px; } /* Начальная позиция из стилей */
+  100% { top: 1px; } /* Поднимаем на 5px вверх */
+}
+
+/* Анимация опускания счетчика */
+@keyframes counterFall {
+  0% { top: 1px; } /* Поднятая позиция */
+  100% { top: 6px; } /* Возвращаемся в исходную позицию */
+}
 
 /* Переход оси */
 .slider-axis-923-11-0-8:before {
@@ -24,9 +38,20 @@ $AXIS_FILL_ACTIVE_DURATION: 0.1s;
   transition: background-color $AXIS_FILL_TRANSITION_DURATION;
 }
 
-/* Переход счетчика */
+/* Базовый стиль счетчика */
 .slider-counter-a01-11-0-8 {
-  transition: left $COUNTER_TRANSITION_DURATION, transform $COUNTER_TRANSITION_DURATION;
+  transition: left $COUNTER_TRANSITION_DURATION;
+  will-change: top, left;
+}
+
+/* Стиль счетчика при перетаскивании - анимируем подъем */
+.slider-dragging .slider-counter-a01-11-0-8 {
+  animation: counterRise $COUNTER_ANIMATION_DURATION $THUMB_DRAG_EASING forwards;
+}
+
+/* Стиль счетчика при окончании перетаскивания - анимируем опускание */
+.slider-dragging-end .slider-counter-a01-11-0-8 {
+  animation: counterFall $COUNTER_ANIMATION_DURATION $THUMB_DRAG_EASING forwards;
 }
 
 /* Переход внутренней части ползунка */
