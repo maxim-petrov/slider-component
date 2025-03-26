@@ -417,7 +417,7 @@ const Slider = ({
                     className={`slider-counter-a01-11-0-8 ${isDraggingEnd ? 'slider-dragging-end' : ''}`}
                     style={{
                       left: `${percentage}%`,
-                      transition: getCustomSliderTransitionStyle(isDragging, isAnimating),
+                      transition: isDraggingEnd ? `left ${animationTokens.duration}` : getCustomSliderTransitionStyle(isDragging, isAnimating),
                       cursor: isDragging ? 'grabbing' : 'grab',
                       position: 'absolute',
                       zIndex: 2,
@@ -516,7 +516,7 @@ const Slider = ({
                   className={`slider-counter-a01-11-0-8 ${isDraggingEnd ? 'slider-dragging-end' : ''}`}
                   style={{
                     left: `${percentage}%`,
-                    transition: getCustomSliderTransitionStyle(isDragging, isAnimating),
+                    transition: isDraggingEnd ? `left ${animationTokens.duration}` : getCustomSliderTransitionStyle(isDragging, isAnimating),
                     cursor: isDragging ? 'grabbing' : 'grab',
                     position: 'absolute',
                     zIndex: 2,

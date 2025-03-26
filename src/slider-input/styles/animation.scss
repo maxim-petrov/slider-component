@@ -42,16 +42,21 @@ $COUNTER_RISE_AMOUNT: 5px;
 .slider-counter-a01-11-0-8 {
   transition: left $COUNTER_TRANSITION_DURATION;
   will-change: top, left;
+  top: 6px; /* Устанавливаем базовую позицию */
 }
 
 /* Стиль счетчика при перетаскивании - анимируем подъем */
 .slider-dragging .slider-counter-a01-11-0-8 {
   animation: counterRise $COUNTER_ANIMATION_DURATION $THUMB_DRAG_EASING forwards;
+  /* Отключаем transition для top чтобы анимация работала */
+  transition: left $COUNTER_TRANSITION_DURATION;
 }
 
 /* Стиль счетчика при окончании перетаскивания - анимируем опускание */
 .slider-dragging-end .slider-counter-a01-11-0-8 {
   animation: counterFall $COUNTER_ANIMATION_DURATION $THUMB_DRAG_EASING forwards;
+  /* Отключаем transition для top чтобы анимация работала */
+  transition: left $COUNTER_TRANSITION_DURATION;
 }
 
 /* Переход внутренней части ползунка */
